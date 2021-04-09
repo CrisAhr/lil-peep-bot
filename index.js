@@ -277,7 +277,7 @@ Bienvenid@ a
 ┠⊷️ *Edad* :
 ┠⊷️ *Lugar* :
 ┠⊷️ *Foto uwu* :
-┠⊷️ -*recuerda leer la descripción*-
+┠⊷️ _*recuerda leer la descripción*_
 ┗━━━━━━━━━━━━━━━━━━━━
 
 Usa ${prefix}verify para verificarte y poder usar el bot.`
