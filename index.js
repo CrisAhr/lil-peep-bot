@@ -595,7 +595,7 @@ Hola *${pushname}*
 ‣ Número de chats: *${totalchat.length}*
 ‣ Grupo oficial
 • _${Wa1}_
-‣ Puto el que lo lea
+‣ Discord uwu
 _${Ig}_
 ────────────────
 ┏━━━━━━━━━━━━━━━━━━━━
