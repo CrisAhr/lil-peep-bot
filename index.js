@@ -276,7 +276,7 @@ Bienvenid@ a
 ┠⊷️ *Nombre* :
 ┠⊷️ *Edad* :
 ┠⊷️ *Lugar* :
-┠⊷️ *Colegio* :
+┠⊷️ *Foto uwu* :
 ┠⊷️ -*recuerda leer la descripción*-
 ┗━━━━━━━━━━━━━━━━━━━━
 
