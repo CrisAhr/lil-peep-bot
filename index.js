@@ -277,7 +277,7 @@ Bienvenid@ a
 ┠⊷️ *Edad* :
 ┠⊷️ *Lugar* :
 ┠⊷️ *Foto uwu* :
-┠⊷️ _*recuerda leer la descripción*_
+┠⊷️ *recuerda leer la descripción*
 ┗━━━━━━━━━━━━━━━━━━━━
 
 Usa ${prefix}verify para verificarte y poder usar el bot.`
@@ -1187,7 +1187,6 @@ if (!isRegister) return reply(mess.only.daftarB)
 Lxa.updatePresence(from, Presence.composing)
 tw = ["Twitter peru",
   "Twitter diario peru",
-  "Recehkan Twitter",
   "twit gracioso"]
 nk = tw[Math.floor(Math.random() * tw.length)]
 try {
@@ -2479,26 +2478,15 @@ mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: mek
 
 
 case 'ytmp3':
-  if (!isRegister) return reply(mess.only.daftarB)
-  
-  reply(mess.wait)
-  play = body.slice(7)
-  if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Formato de link incorrecto')
-  try {
-  anu = await fetchJson(`https://api.zeks.xyz/api/ytmp3/2?url=${play}&apikey=${viKey}`)
-  infomp3 = `*Audio!!!*\n‣ Nombre : ${anu.result.title}\n‣ Fuente: ${anu.result.source}\n‣ Tamaño: ${anu.result.size}\n\n_El audio se esta mandando espere, si no llega descargue por el link_\n‣ *link* : ${anu.result.link}`
-  buffer = await getBuffer(anu.result.thumb)
-  lagu = await getBuffer(anu.result.link)
-  Lxa.sendMessage(from, buffer, image, {
-quoted: mek, caption: infomp3
-  })
-  Lxa.sendMessage(from, lagu, audio, {
-mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: mek
-  })
-  
-  } catch {
-    reply(mess.ferr)
-  }
+  if (args.length < 1) return reply('¿Dónde está la URL?')
+  if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
+  anu = await fetchJson(`https://mhankbarbar.moe/api/yta?url=${args[0]}&apiKey=${apiKey}`, {method: 'get'})
+  if (anu.error) return reply(anu.error)
+  teks = `*Titulo* : ${anu.title}\n*Tamaño* : ${anu.filesize}`
+  thumb = await getBuffer(anu.thumb)
+  client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
+  buffer = await getBuffer(anu.result)
+  client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
   break
 
 case 'ytmp4':
@@ -2888,7 +2876,7 @@ mimetype: 'video/mp4', filename: `${anu.nameInfo}.mp4`, quoted: mek
 							.toFormat('webp')
 							.save(ran)*/
 					} else {
-						reply(`Kirim gambar dengan caption ${prefix}sticker atau tag gambar yang sudah dikirim`)
+						reply(`Envíe imágenes con ${prefix}sticker o etiquetas de imagen que ya se han enviado `)
 					}
 					break
 
